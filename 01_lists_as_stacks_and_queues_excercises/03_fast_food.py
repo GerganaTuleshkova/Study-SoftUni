@@ -15,7 +15,8 @@ while orders_queue:
 if not orders_queue:
     print("Orders complete")
 else:
-    print("Orders left: ", end="")
-    while orders_queue:
-        print(orders_queue.popleft(), end=" ")
+    # print("Orders left: ", end="")
+    # while orders_queue:
+    #     print(orders_queue.popleft(), end=" ")
+    print(f"Orders left: {' '.join([str(el) for el in orders_queue])}")
 
