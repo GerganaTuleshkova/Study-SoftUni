@@ -1,33 +1,51 @@
+from math import floor
 from collections import deque
 
-robots_queue = deque()
-robots_p_time_queue = deque()
 
-information = input().split(";")
-for info in information:
-    robot_info = info.split("-")
-    robots_queue.append(robot_info[0])
-    robots_p_time_queue.append(int(robot_info[1]))
+class Robot:
+    def __init__(self, name, processing_time):
+        self.name = name
+        self.processing_time = processing_time
+        self.busy_until = 0
 
-time = {"h": 0, "m": 0, "s": 0}
-time_list = input().split(":")
-time["h"] = time_list[0]
-time["m"] = time_list[1]
-time["s"] = time_list[2]
 
-products_queue = deque()
+def get_seconds_from_time(time):
+    hours, minutes, seconds = [int(x) for x in time.split(':')]
+    return hours * 60 * 60 + minutes * 60 + seconds
+
+
+def get_time_from_seconds(seconds):
+    hours = (seconds // (60 * 60)) % 24
+    minutes = floor((seconds / 60) % 60)
+    seconds = seconds % 60
+    return f'{hours:02d}:{minutes:02d}:{seconds:02d}'
+
+
+robots = []
+robots_input = input().split(';')
+for robot_input in robots_input:
+    robot_name, processing_time = robot_input.split('-')
+    robots.append(Robot(robot_name, int(processing_time)))
+
+time_in_seconds = get_seconds_from_time(input())
+
+items = deque()
 
 while True:
-    command = input()
-    if command == "End":
+    item = input()
+    if item == 'End':
         break
-    else:
-        products_queue.append(command)
+    items.append(item)
 
-
-
-
-print(robots_queue)
-print(robots_p_time_queue)
-print(time)
-print(products_queue)
+while items:
+    current_item = items.popleft()
+    time_in_seconds += 1
+    found_robot = False
+    for robot in robots:
+        if time_in_seconds >= robot.busy_until:
+            robot.busy_until = time_in_seconds + robot.processing_time
+            found_robot = True
+            print(f'{robot.name} - {current_item} [{get_time_from_seconds(time_in_seconds)}]')
+            break
+    if not found_robot:
+        items.append(current_item)
