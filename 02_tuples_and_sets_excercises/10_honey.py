@@ -9,6 +9,8 @@ def make_calculation(num_1, num_2, operator):
     elif operator == "-":
         return abs(num_1 - num_2)
     elif operator == "/":
+        if num_1 == 0 and num_2 == 0:
+            return 0
         return abs(num_1 / num_2)
 
 
