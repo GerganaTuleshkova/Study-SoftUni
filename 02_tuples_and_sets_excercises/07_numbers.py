@@ -18,6 +18,10 @@ for _ in range(n):
     if action == "Add":
         for n in command[2:]:
             set_to_manipulate.add(int(n))
+
+        # second option
+        # current_set = set([int(x) for x in command[2:]])
+        # set_to_manipulate = set_to_manipulate.difference(current_set))
     elif action == "Remove":
         for n in command[2:]:
             if int(n) in set_to_manipulate:
