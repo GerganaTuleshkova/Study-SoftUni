@@ -1,28 +1,30 @@
 from collections import deque
 
+
 def make_calculation(queue, operator):
     if operator == "*":
         result = 1
         while queue:
             result *= queue.popleft()
-        queue.append(result)
+
     elif operator == "+":
         result = 0
         while queue:
             result += queue.popleft()
-        queue.append(result)
+
     elif operator == "-":
         if queue:
             result = queue.popleft()
             while queue:
                 result -= queue.popleft()
-            queue.append(result)
+
     elif operator == "/":
         if queue:
             result = queue.popleft()
             while queue:
                 result //= queue.popleft()
-            queue.append(result)
+
+    queue.append(result)
     return queue
 
 
