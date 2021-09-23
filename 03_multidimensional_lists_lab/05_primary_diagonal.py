@@ -11,15 +11,14 @@ def make_matrix():
 
 
 matrix = make_matrix()
-
-sum_primary_diagonal = 0
-
 n = len(matrix)
-m = len(matrix[0])
+sum_primary_diagonal = (sum(matrix[i][i] for i in range(n)))
+# m = len(matrix[0])
+#
+# for row_index in range(n):
+#     for column_index in range(m):
+#         if row_index == column_index:
+#             sum_primary_diagonal += matrix[row_index][column_index]
 
-for row_index in range(n):
-    for column_index in range(m):
-        if row_index == column_index:
-            sum_primary_diagonal += matrix[row_index][column_index]
 
 print(sum_primary_diagonal)
