@@ -26,9 +26,9 @@ substrings = input().split()
 main_colors = ["red", "yellow", "blue"]
 secondary_colors = ["orange", "purple", "green"]
 secondary_colors_needs = {
-    "orange" : ["red", "yellow"],
-    "purple" : ["red", "blue"],
-    "green" : ["blue", "yellow"] }
+    "orange": ["red", "yellow"],
+    "purple": ["red", "blue"],
+    "green": ["blue", "yellow"]}
 
 colors_found = []
 

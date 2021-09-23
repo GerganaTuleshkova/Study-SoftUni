@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def toy_is_crafted(magic):
     toy = ""
     if magic == 150:
