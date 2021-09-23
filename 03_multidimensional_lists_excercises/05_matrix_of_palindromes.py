@@ -1,18 +1,25 @@
 r, c = [int(n) for n in input().split()]
 
-matrix = []
-
 start = ord("a")
-middle = ord("a")
 
+# 1st option with make of a matrix
+
+#matrix = []
+# for r_index in range(r):
+#     matrix.append([])
+#     for c_index in range(c):
+#         current_element = chr(start + r_index) + chr(start + r_index + c_index) + chr(start + r_index)
+#         matrix[r_index].append(current_element)
+#
+# for row_index in range(len(matrix)):
+#     [print(n, end=" ") for n in matrix[row_index]]
+#     print()
 
 for r_index in range(r):
-    matrix.append([])
     for c_index in range(c):
-        current_element = chr(start) + chr(middle + r_index + c_index) + chr(start)
-        matrix[r_index].append(current_element)
-    start += 1
+        print(chr(start + r_index) + chr(start + r_index + c_index) + chr(start + r_index), end=" ")
 
-for row_index in range(len(matrix)):
-    [print(n, end=" ") for n in matrix[row_index]]
     print()
+
+
+
