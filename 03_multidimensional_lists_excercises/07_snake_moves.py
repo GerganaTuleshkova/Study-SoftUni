@@ -7,7 +7,6 @@ for row_index in range(rows):
 
 snake = input()
 
-
 count = 0
 for r_index in range(rows):
     if r_index % 2 == 0:
