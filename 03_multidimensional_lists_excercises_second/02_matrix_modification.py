@@ -27,5 +27,5 @@ while not command == "END":
     command = input()
 
 for row in matrix:
-    [print(i, end=" ") for i in row]
-    print()
+    print(" ".join([str(n) for n in row]))
+
