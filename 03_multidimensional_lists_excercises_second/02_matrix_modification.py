@@ -19,9 +19,9 @@ while not command == "END":
     if not is_valid_position(row, column, matrix):
         print("Invalid coordinates")
 
-    elif action == "Add" and is_valid_position(row, column, matrix):
+    elif action == "Add":
         matrix[row][column] += value
-    elif action == "Subtract" and is_valid_position(row, column, matrix):
+    elif action == "Subtract" :
         matrix[row][column] -= value
 
     command = input()
