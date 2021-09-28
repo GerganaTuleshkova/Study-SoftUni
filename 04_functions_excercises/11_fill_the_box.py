@@ -1,10 +1,8 @@
-def fill_the_box(*args):
-    height = args[0]
-    length = args[1]
-    width = args[2]
+def fill_the_box(height, length, width, *args):
+
     volume = height * width * length
     cubes_left = 0
-    for i in args[3:]:
+    for i in args:
         if i == "Finish":
             break
         if volume >= i:
