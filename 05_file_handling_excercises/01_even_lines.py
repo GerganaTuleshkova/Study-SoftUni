@@ -17,3 +17,5 @@ for line in file:
         print("".join(line))
 
     count += 1
+
+file.close()
