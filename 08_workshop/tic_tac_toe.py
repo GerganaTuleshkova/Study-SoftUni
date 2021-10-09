@@ -1,19 +1,6 @@
-position_mapper = {
-        1: (0, 0),
-        2: (0, 1),
-        3: (0, 2),
-        4: (1, 0),
-        5: (1, 1),
-        6: (1, 2),
-        7: (2, 0),
-        8: (2, 1),
-        9: (2, 2),
-    }
-
-
 def read_players_info():
     player_1_name = input("Player one name: ")
-    player_2_name= input("Player two name: ")
+    player_2_name = input("Player two name: ")
     player_1_sign, player_2_sign = get_players_signs(player_1_name)
     player_1 = [player_1_name, player_1_sign]
     player_2 = [player_2_name, player_2_sign]
@@ -49,7 +36,7 @@ def print_start_board(board):
 
 
 def is_empty(selected_position, board):
-    r, c = position_mapper[selected_position]
+    r, c = get_coords_by_position(selected_position)
     return board[r][c] == ""
 
 
@@ -145,7 +132,10 @@ def play(board):
     # set current player to player 1
     current_payer, other_player = player_1, player_2
 
+    # print the board with numbers
     print_start_board(board)
+
+    # print who starts first
     print(f"{current_payer[0]} starts first!")
 
     # start playing
@@ -170,8 +160,5 @@ board = [
     ["", "", ""],
     ["", "", ""]
 ]
-
-
-
 play(board)
 
