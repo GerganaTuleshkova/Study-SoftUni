@@ -13,3 +13,5 @@ This repository contains excercise files from my study at SoftUni
 <a href="https://softuni.bg/certificates/details/127687/9a6fc0d0">Python Web Basics</a> 
 
 <a href="https://softuni.bg/certificates/details/132398/412a764b">Python Web Framework</a> 
+
+<a href="https://softuni.bg/certificates/details/136514/0216a7b3">JavaScript Advanced</a> 
